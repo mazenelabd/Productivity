@@ -173,7 +173,7 @@ const createTask = asyncHandler(async (req, res) => {
 // @route   PUT /api/users/lists/:listid/:taskid
 // @access  Private
 const updateTask = asyncHandler(async (req, res) => {
-  const { title } = req.body
+  const { title, checked } = req.body
 
   const user = await User.findById(req.user._id)
   const task = await user.lists
@@ -181,7 +181,8 @@ const updateTask = asyncHandler(async (req, res) => {
     .tasks.id(req.params.taskid)
 
   if (user && task) {
-    task.title = title
+    task.title = title || task.title
+    task.checked = checked
 
     await user.save()
     res.status(201).json({
