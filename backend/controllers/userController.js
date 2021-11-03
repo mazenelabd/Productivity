@@ -93,10 +93,7 @@ const createList = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      lists: user.lists,
+      message: 'List created',
     })
   } else {
     res.status(404)
@@ -118,10 +115,7 @@ const updateList = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      lists: user.lists,
+      message: 'List updated',
     })
   } else {
     res.status(404)
@@ -141,10 +135,7 @@ const deleteList = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      lists: user.lists,
+      message: 'List deleted',
     })
   } else {
     res.status(404)
@@ -170,10 +161,7 @@ const createTask = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      lists: user.lists,
+      message: 'Task created',
     })
   } else {
     res.status(404)
@@ -197,10 +185,7 @@ const updateTask = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      lists: user.lists,
+      message: 'Task updated',
     })
   } else {
     res.status(404)
@@ -222,10 +207,7 @@ const deleteTask = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      lists: user.lists,
+      message: 'Task deleted',
     })
   } else {
     res.status(404)
