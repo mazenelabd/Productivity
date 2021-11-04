@@ -69,6 +69,7 @@ const getUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       lists: user.lists,
+      token: req.headers.authorization.split(' ')[1],
     })
   } else {
     res.status(404)
@@ -93,7 +94,11 @@ const createList = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      message: 'List created',
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      lists: user.lists,
+      token: req.headers.authorization.split(' ')[1],
     })
   } else {
     res.status(404)
@@ -115,7 +120,11 @@ const updateList = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      message: 'List updated',
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      lists: user.lists,
+      token: req.headers.authorization.split(' ')[1],
     })
   } else {
     res.status(404)
@@ -135,7 +144,11 @@ const deleteList = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      message: 'List deleted',
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      lists: user.lists,
+      token: req.headers.authorization.split(' ')[1],
     })
   } else {
     res.status(404)
@@ -161,7 +174,11 @@ const createTask = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      message: 'Task created',
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      lists: user.lists,
+      token: req.headers.authorization.split(' ')[1],
     })
   } else {
     res.status(404)
@@ -186,7 +203,11 @@ const updateTask = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      message: 'Task updated',
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      lists: user.lists,
+      token: req.headers.authorization.split(' ')[1],
     })
   } else {
     res.status(404)
@@ -208,7 +229,11 @@ const deleteTask = asyncHandler(async (req, res) => {
 
     await user.save()
     res.status(201).json({
-      message: 'Task deleted',
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      lists: user.lists,
+      token: req.headers.authorization.split(' ')[1],
     })
   } else {
     res.status(404)
