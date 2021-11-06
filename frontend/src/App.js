@@ -6,18 +6,27 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Header from './components/Header'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
+import Home from './components/Home'
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false)
+  const mode = localStorage.getItem('darkMode') === 'dark' ? 'dark' : 'light'
+  const [darkMode, setDarkMode] = useState(mode)
 
   const theme = createTheme({
     palette: {
-      mode: darkMode ? 'dark' : 'light',
+      mode: darkMode,
     },
   })
 
   const toggleColorMode = () => {
-    setDarkMode(!darkMode)
+    if (darkMode === 'dark') {
+      localStorage.setItem('darkMode', 'light')
+      setDarkMode('light')
+    }
+    if (darkMode === 'light') {
+      localStorage.setItem('darkMode', 'dark')
+      setDarkMode('dark')
+    }
   }
 
   return (
@@ -28,6 +37,7 @@ const App = () => {
           <Header toggleColorMode={toggleColorMode} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
+          <Route path='/' component={Home} exact />
         </Container>
       </ThemeProvider>
     </BrowserRouter>

@@ -8,6 +8,8 @@ node_modules/
 
 # testing
 /coverage
+/frontend/cypress/videos
+/frontend/cypress/screenshots
 
 # production
 /build

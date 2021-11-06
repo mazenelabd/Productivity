@@ -54,7 +54,7 @@ const Login = ({ location, history }) => {
           sx={{ my: 2 }}
           fullWidth
           autoFocus
-          error={error}
+          error={error ? true : false}
           required
         />
 
@@ -64,7 +64,7 @@ const Login = ({ location, history }) => {
           setPassword={setPassword}
           handleClickShowPassword={handleClickShowPassword}
           value='Password'
-          error={error}
+          error={error ? true : false}
         />
 
         {error && <Alerts severity='error' message={error} />}

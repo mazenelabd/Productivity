@@ -25,8 +25,8 @@ const Header = ({ toggleColorMode }) => {
   return (
     <Box display='flex' sx={{ pt: 3, justifyContent: 'space-between ' }}>
       <Typography variant='h5'>
-        Tasks
-        <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color='inherit'>
+        Productivity
+        <IconButton sx={{ ml: 0.1 }} onClick={toggleColorMode} color='inherit'>
           {theme.palette.mode === 'dark' ? (
             <Brightness7Icon />
           ) : (

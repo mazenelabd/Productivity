@@ -6,6 +6,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
+import PropTypes from 'prop-types'
 
 const PasswordInput = ({
   password,
@@ -14,7 +15,6 @@ const PasswordInput = ({
   handleClickShowPassword,
   value,
   error,
-  size,
   required,
 }) => {
   return (
@@ -30,7 +30,6 @@ const PasswordInput = ({
         id='outlined-adornment-password'
         type={showPassword ? 'text' : 'password'}
         value={password}
-        size={size && 'small'}
         onChange={(e) => setPassword(e.target.value)}
         endAdornment={
           <InputAdornment position='end'>
@@ -48,6 +47,16 @@ const PasswordInput = ({
       />
     </FormControl>
   )
+}
+
+PasswordInput.propTypes = {
+  password: PropTypes.string,
+  showPassword: PropTypes.bool,
+  setPassword: PropTypes.func,
+  handleClickShowPassword: PropTypes.func,
+  value: PropTypes.string,
+  required: PropTypes.bool,
+  error: PropTypes.bool,
 }
 
 export default PasswordInput
