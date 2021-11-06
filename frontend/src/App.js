@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Login from './components/Login'
 import Register from './components/Register'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import Home from './components/Home'
 
@@ -35,9 +36,12 @@ const App = () => {
         <CssBaseline />
         <Container maxWidth='sm'>
           <Header toggleColorMode={toggleColorMode} />
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
-          <Route path='/' component={Home} exact />
+          <main style={{ minHeight: '81.6vh' }}>
+            <Route path='/login' component={Login} />
+            <Route path='/register' component={Register} />
+            <Route path='/' component={Home} exact />
+          </main>
+          <Footer />
         </Container>
       </ThemeProvider>
     </BrowserRouter>
