@@ -21,6 +21,8 @@ app.use(express.json())
 
 app.use('/api/users', userRoutes)
 
+const __dirname = path.resolve()
+
 if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) =>
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
