@@ -11,6 +11,7 @@
 - Each task name can be updated
 - Each task can be deleted
 - Dark Mode feature is available.
+- Tested using Cypress
 
 ### Env Variables
 
