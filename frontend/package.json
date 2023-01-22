@@ -9,7 +9,7 @@
     "@mui/icons-material": "^5.0.5",
     "@mui/material": "^5.0.6",
     "@mui/styled-engine-sc": "^5.0.4",
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
@@ -53,5 +53,8 @@
     "@testing-library/cypress": "^8.0.1",
     "cypress": "^8.7.0",
     "eslint-plugin-cypress": "^2.12.1"
+  },
+  "engines": {
+    "node": "14.17.2"
   }
 }
